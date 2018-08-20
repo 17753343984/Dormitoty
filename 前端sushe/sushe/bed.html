@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>宿舍管理系统</title>
+
+    <meta name="description" content="blank page" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <!--     <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" 
+          rel="stylesheet" type="text/css"> -->
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="index.html" class="navbar-brand">
+                        <div style="margin-top: 10px">
+                            <strong>宿舍管理系统</strong>
+                        </div>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!--查询-->
+                    <li>
+                        <a href="index.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 查询 </span>
+                        </a>
+                    </li>
+                    <!--学生信息管理-->
+                    <li>
+                        <a href="student.html">
+                            <i class="menu-icon glyphicon glyphicon-tasks"></i>
+                            <span class="menu-text"> 学生信息管理 </span>
+                        </a>
+                    </li>
+                    <!--辅导员管理-->
+                    <li>
+                        <a href="counsellor.html">
+                            <i class="menu-icon glyphicon glyphicon-edit"></i>
+                            <span class="menu-text"> 辅导员管理 </span>
+                        </a>
+                    </li>
+                    <!--系别管理-->
+                    <li>
+                        <a href="department.html">
+                            <i class="menu-icon glyphicon glyphicon-trash"></i>
+                            <span class="menu-text"> 系别管理 </span>
+                        </a>
+                    </li>
+                    <!--班级管理-->
+                    <li>
+                        <a href="class.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 班级管理 </span>
+                        </a>
+                    </li>
+                    <!--楼号管理-->
+                    <li>
+                        <a href="building.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 楼号管理 </span>
+                        </a>
+                    </li>
+                    <!--宿舍管理-->
+                    <li>
+                        <a href="dormitory.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 宿舍管理 </span>
+                        </a>
+                    </li>
+                    <!--床位管理-->
+                    <li>
+                        <a href="bed.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 床位管理 </span>
+                        </a>
+                    </li>
+                    <!--管理员管理-->
+                    <li>
+                        <a href="administrators.html">
+                            <i class="menu-icon glyphicon glyphicon-filter"></i>
+                            <span class="menu-text"> 管理员管理 </span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>
+                            床位管理
+                        </h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="col-xs-12 col-md-12">
+                    <div class="well with-header  with-footer">
+                        <div class="header bg-blue">
+                            床位管理
+                        </div>
+                        <!-- <div>
+                            <a id="" href="bedAdd.html" class="btn btn-default" style="margin-bottom: 10px">
+                                添加床位
+                            </a>
+                        </div> -->
+                        <table class="table table-hover">
+                            <thead class="bordered-darkorange">
+                                <tr>
+                                    <th>
+                                        宿舍
+                                    </th>
+                                    <th>
+                                        床位号
+                                    </th>
+                                    <th>
+                                        学生
+                                    </th>
+                                    <th>
+                                        学号
+                                    </th>
+                                    <th>
+                                        操作
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <div id="cutpage" class="digg">
+
+                            </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+    <!--Basic Scripts-->
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+
+    <!--Google Analytics::Demo Only-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52103994-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="assets/js/delDoc.js"></script>
+    <script src="assets/js/clickToken.js"></script>
+    <script>
+            var allPage 
+        var token = localStorage.getItem("token")
+        var uid = localStorage.getItem("uid")
+
+         // 获取当前页数
+         try {
+            var pageNow = document.URL.split('?')[1].split("=")[1];
+        }
+        catch (error) {
+            // 默认转向第一页
+            var pageNow = "1"
+        }
+        $.ajax({
+            url: 'http://122.114.6.136/dormitory/public/index.php/api/bed/lst/page/'+ pageNow +'/uid/' + uid + '/token/' + token,
+            async:false,
+            type: 'get', //GET
+            //async: true,    //或false,是否异步
+            //timeout: 5000,    //超时时间
+            dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+
+            success: function (data) {
+                console.log(data);
+                for (i = 0; i < data.data.data.length; i++) {
+                    $("tbody").append(
+                        "<tr><td>" +
+                        data.data.data[i].dorm_name + "</td><td>" +
+                        bedTransform(data.data.data[i].bed_name) + "</td><td>" +
+                        data.data.data[i].student_name + "</td><td>" +
+                        data.data.data[i].student_id + "</td><td><a href='bedEdit.html?" + data.data.data[i].id + "'><button class='btn btn-info btn-xs edit'>修改</button></a><button class='btn btn-danger btn-xs delete' id=" +
+                        data.data.data[i].id + " onclick='del()'>删除</button></td></tr>"
+                    )
+                }
+
+                  allPage = data.data.last_page;
+                 
+            },
+            error: function (error) {
+                alert("error")
+            },
+        })
+
+            // 获取总页数
+            function getNowPage() {
+                pageNum =  document.URL.split('?')[1].split("=")[1];
+                pageNum = parseInt(pageNum)
+                return pageNum
+            }
+
+
+            allPage = parseInt(allPage)
+            console.log(allPage)
+            // 生成器
+            var fristkh = document.createElement("span");
+            fristkh.setAttribute('class', 'disabled')
+            fristkh.innerHTML = "<"
+
+            var endkh = document.createElement('span');
+            endkh.setAttribute('class', 'disabled')
+            endkh.innerHTML = ">"
+
+            var shenglue = document.createElement('a')
+            shenglue.innerHTML = "..."
+
+
+            if(pageNow == 1)
+            // 判断为第一页
+            {   // 加入不可点击<
+                if(allPage > 10)
+                {
+                    document.getElementById('cutpage').appendChild(fristkh)
+
+                    for (var s=1; s<=5; s++)
+                    {
+                        var doc = document.createElement("a");
+                        doc.setAttribute('href','bed.html?page=' + s)
+                        if (s == pageNow){    doc.setAttribute('style','color:red') }
+                        doc.innerHTML = s
+                        document.getElementById('cutpage').appendChild(doc)
+                    }
+
+
+                    var secendPage = document.createElement("a");
+
+                    secendPage.innerHTML = "..."
+                    document.getElementById('cutpage').appendChild(secendPage)
+
+
+                    var secendPages = document.createElement("a");
+
+                    secendPages.setAttribute('href','bed.html?page=2')
+                    secendPages.innerHTML = ">"
+                    document.getElementById('cutpage').appendChild(secendPages)
+                }
+                else
+                {
+                    document.getElementById('cutpage').appendChild(fristkh)
+
+                    for (var s=1; s<=allPage; s++)
+                    {
+                        var doc = document.createElement("a");
+                        doc.setAttribute('href','bed.html?page=' + s)
+                        if (s == pageNow){    doc.setAttribute('style','color:red') }
+                        doc.innerHTML = s
+                        document.getElementById('cutpage').appendChild(doc)
+                    }
+
+                    var secendPage = document.createElement("a");
+
+                    secendPage.setAttribute('href','bed.html?page=2')
+                    secendPage.innerHTML = ">"
+                    document.getElementById('cutpage').appendChild(secendPage)
+                    pageNow = getNowPage()
+                }
+            }
+
+            if(pageNow == allPage)
+            {
+                // 判断为最后一页
+                if(allPage > 10)
+                {
+                    var fristPage = document.createElement("a");
+                    var lastpages = allPage-1
+                    fristPage.setAttribute('href','bed.html?page=' + lastpages)
+                    fristPage.innerHTML = "<"
+                    document.getElementById('cutpage').appendChild(fristPage)
+
+
+                    var secendPage = document.createElement("a");
+
+                    secendPage.innerHTML = "..."
+                    document.getElementById('cutpage').appendChild(secendPage)
+                    pageNow = getNowPage()
+
+
+                    var page2 = allPage -5;
+                    for (var w=1; w<=5; w++)
+                    {
+                        var doc = document.createElement("a");
+                        page2++;
+                        doc.setAttribute('href','bed.html?page=' + page2)
+                        if (page2 == pageNow){    doc.setAttribute('style','color:red') }
+                        doc.innerHTML = page2
+                        document.getElementById('cutpage').appendChild(doc)
+                    }
+
+                    document.getElementById('cutpage').appendChild(endkh)
+
+                    pageNow = getNowPage()
+                }
+                else
+                {
+                    var fristPage = document.createElement("a");
+                    var lastpages = allPage-1
+                    fristPage.setAttribute('href','bed.html?page=' + lastpages)
+                    fristPage.innerHTML = "<"
+                    document.getElementById('cutpage').appendChild(fristPage)
+
+                    for (var w=1; w<=allPage; w++)
+                    {
+                        var doc = document.createElement("a");
+                        doc.setAttribute('href','bed.html?page=' + w)
+                        if (w == pageNow){    doc.setAttribute('style','color:red') }
+                        doc.innerHTML = w
+                        document.getElementById('cutpage').appendChild(doc)
+                    }
+
+                    document.getElementById('cutpage').appendChild(endkh)
+
+                    pageNow = getNowPage()
+                }
+            }
+            // 判断为中间页
+            if (pageNow != allPage && pageNow!=1)
+            {
+                if(allPage > 10)
+                {
+                    var fristPage = document.createElement("a");
+                    pageNow = getNowPage();
+                    var lastpages = pageNum - 1
+                    fristPage.setAttribute('href','bed.html?page=' + lastpages)
+
+                    fristPage.innerHTML = "<"
+                    document.getElementById('cutpage').appendChild(fristPage)
+
+                    var secendPage = document.createElement("a");
+
+                    secendPage.innerHTML = "..."
+                    document.getElementById('cutpage').appendChild(secendPage)
+                    pageNow = getNowPage()
+
+
+
+                    var startPage = pageNow - 2
+
+                    if(startPage < 1){ startPage = 1 }
+                    if(startPage >= allPage){ startPage = allPage - 5 }
+
+                    for (var e=1; e<=5; e++)
+                    {
+                        if(startPage > allPage){ break; }
+
+                        var doc = document.createElement("a");
+                        doc.setAttribute('href','bed.html?page=' + startPage)
+                        if (startPage == pageNow){   doc.setAttribute('style','color:red') }
+                        doc.innerHTML = startPage
+                        document.getElementById('cutpage').appendChild(doc)
+                        startPage++
+
+                    }
+                    pageNow =  getNowPage()
+
+                    var secendPage = document.createElement("a");
+
+                    secendPage.innerHTML = "..."
+                    document.getElementById('cutpage').appendChild(secendPage)
+                    pageNow = getNowPage()
+
+
+
+                    var endpage = document.createElement("a");
+                    var nextpages = pageNum + 1
+                    endpage.setAttribute('href','bed.html?page=' + nextpages)
+                    endpage.innerHTML = ">"
+                    document.getElementById('cutpage').appendChild(endpage)
+                }
+                else
+                {
+                    var fristPage = document.createElement("a");
+                    pageNow = getNowPage();
+                    var lastpages = pageNum - 1
+                    fristPage.setAttribute('href','bed.html?page=' + lastpages)
+
+                    fristPage.innerHTML = "<"
+                    document.getElementById('cutpage').appendChild(fristPage)
+
+                    for (var e=1; e<=allPage; e++)
+                    {
+                        var doc = document.createElement("a");
+                        doc.setAttribute('href','bed.html?page=' + e)
+                        if (e == pageNow){    doc.setAttribute('style','color:red') }
+                        doc.innerHTML = e
+                        document.getElementById('cutpage').appendChild(doc)
+                    }
+                    pageNow =  getNowPage()
+                    var endpage = document.createElement("a");
+                    var nextpages = pageNum + 1
+                    endpage.setAttribute('href','bed.html?page=' + nextpages)
+                    endpage.innerHTML = ">"
+                    document.getElementById('cutpage').appendChild(endpage)
+                }
+
+
+            }
+
+        function del() {
+            var c = event.target;
+            var s = event.target.id;
+            if (confirm("确定删除?")) {
+                console.log(s);
+
+                $.ajax({
+                    url: 'http://122.114.6.136/dormitory/public/index.php/api/bed/del/id/' + s + '/uid/' + uid + '/token/' + token,
+                    type: 'get',
+                    dataType: 'json',
+                    // contentType: "application/json;charset=utf-8",
+                    // data: JSON.stringify(postdata),
+                    success: function (data) {
+                        if (data.code == 200) {
+                            $(c).parent().parent().hide();
+                            alert(data.msg);
+                        } else {
+                            console.log(data);
+                            alert(data.msg);
+                        }
+                    },
+                    error: function (data) { alert("接口错误") }
+                })
+            }
+
+        }
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

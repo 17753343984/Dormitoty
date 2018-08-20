@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!--
+BeyondAdmin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.2.0
+Version: 1.0.0
+Purchase: http://wrapbootstrap.com
+-->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>宿舍管理系统</title>
+
+    <meta name="description" content="data tables" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--Basic Styles-->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="bootstrap-rtl-link" href="" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/weather-icons.min.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <!-- <link href="http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css"> -->
+
+    <!--Beyond styles-->
+    <link id="beyond-link" href="assets/css/beyond.min.css" rel="stylesheet" />
+    <link href="assets/css/demo.min.css" rel="stylesheet" />
+    <link href="assets/css/typicons.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.min.css" rel="stylesheet" />
+    <link id="skin-link" href="" rel="stylesheet" type="text/css" />
+
+    <!--Page Related styles-->
+    <link href="assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+
+    <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
+    <script src="assets/js/skins.min.js"></script>
+</head>
+<!-- /Head -->
+<!-- Body -->
+
+<body>
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <!-- Navbar Barnd -->
+                <div class="navbar-header pull-left">
+                    <a href="#" class="navbar-brand">
+                        <div style="margin-top: 10px">
+                            <strong>宿舍管理系统</strong>
+                        </div>
+                    </a>
+                </div>
+                <!-- /Navbar Barnd -->
+                <!-- Sidebar Collapse -->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="collapse-icon fa fa-bars"></i>
+                </div>
+                <!-- /Sidebar Collapse -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <!-- 添加床位 -->
+                    <li>
+                        <a href="bedSupplement.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 床位补充 </span>
+                        </a>
+                    </li>
+                    <!--学生信息补充-->
+                    <li>
+                        <a href="studentSupplement.html">
+                            <i class="menu-icon glyphicon glyphicon-home"></i>
+                            <span class="menu-text"> 学生信息补充 </span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>
+                            学生管理
+                        </h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="widget">
+                                <div class="widget-header bordered-bottom bordered-blue">
+                                    <span class="widget-caption">添加学生</span>
+                                </div>
+                                <div class="widget-body">
+                                    <form role="form" id="addStudent">
+                                        <div class="container">
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">姓名</label>
+                                                    <input type="text" class="form-control" id="xingming" autofocus="autofocus" required="required" placeholder="姓名">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">性别</label>
+                                                    <div id="sex" class="radio">
+                                                        <label>
+                                                            <input name="sex" type="radio" value="男" class="colored-blue">
+                                                            <span class="text">男</span>
+                                                        </label>
+                                                        <label>
+                                                            <input name="sex" type="radio" value="女" class="colored-blue">
+                                                            <span class="text">女</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">出生年月</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control date-picker" id="shengri" type="text" data-date-format="yyyy-mm-dd" required="required">
+                                                        <span class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">家庭住址</label>
+                                                    <input type="text" class="form-control" id="zhuzhi" placeholder="家庭住址">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">联系方式</label>
+                                                    <input type="number" class="form-control" id="dianhua" placeholder="电话">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">身份证号</label>
+                                                    <input type="text" class="form-control" id="IDcard" placeholder="身份证号" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">籍贯</label>
+                                                    <input type="text" class="form-control" id="jiguan" placeholder="籍贯">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">职务</label>
+                                                    <input type="text" class="form-control" id="zhiwu" placeholder="无职位填“学生”">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">系别</label>
+                                                    <select id="xi" onchange="requestFd()" style="width: 100%;height: 34px;">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">专业</label>
+                                                    <input type="text" class="form-control" id="zhuanye" placeholder="专业">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">辅导员</label>
+                                                    <select id="fd" onchange="requestClass()" style="width: 100%;height: 34px;">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">班级</label>
+                                                    <select id="ban" style="width: 100%;height: 34px;">
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">学号</label>
+                                                    <input type="text" class="form-control" id="xuehao" placeholder="学号" required="required">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">父亲电话</label>
+                                                    <input type="number" class="form-control" id="fuqin" placeholder="父亲电话">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6 col-lg-4">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">母亲电话</label>
+                                                    <input type="number" class="form-control" id="muqin" placeholder="母亲电话">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <input type="button" class="btn btn-blue" id="add" value="保存" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+
+    </div>
+
+    <!--Basic Scripts-->
+    <script src="assets/js/jquery-2.0.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!--Beyond Scripts-->
+    <script src="assets/js/beyond.min.js"></script>
+
+    <!--Page Related Scripts-->
+    <script src="assets/js/datatable/jquery.dataTables.min.js"></script>
+    <script src="assets/js/datatable/ZeroClipboard.js"></script>
+    <script src="assets/js/datatable/dataTables.tableTools.min.js"></script>
+    <script src="assets/js/datatable/dataTables.bootstrap.min.js"></script>
+    <script src="assets/js/datatable/datatables-init.js"></script>
+    <script>
+        InitiateSimpleDataTable.init();
+        InitiateEditableDataTable.init();
+        InitiateExpandableDataTable.init();
+        InitiateSearchableDataTable.init();
+    </script>
+    <!--Jquery Select2-->
+    <script src="assets/js/select2/select2.js"></script>
+    <!--Bootstrap Tags Input-->
+    <script src="assets/js/tagsinput/bootstrap-tagsinput.js"></script>
+
+    <!--Bootstrap Date Picker-->
+    <script src="assets/js/datetime/bootstrap-datepicker.js"></script>
+
+    <!--Bootstrap Time Picker-->
+    <script src="assets/js/datetime/bootstrap-timepicker.js"></script>
+
+    <!--Bootstrap Date Range Picker-->
+    <script src="assets/js/datetime/moment.js"></script>
+    <script src="assets/js/datetime/daterangepicker.js"></script>
+
+    <!--Jquery Autosize-->
+    <script src="assets/js/textarea/jquery.autosize.js"></script>
+
+    <!--Fuelux Spinner-->
+    <script src="assets/js/fuelux/spinner/fuelux.spinner.min.js"></script>
+
+    <!--jQUery MiniColors-->
+    <script src="assets/js/colorpicker/jquery.minicolors.js"></script>
+
+    <!--jQUery Knob-->
+    <script src="assets/js/knob/jquery.knob.js"></script>
+
+    <!--noUiSlider-->
+    <script src="assets/js/slider/jquery.nouislider.js"></script>
+
+    <!--jQRangeSlider-->
+    <script src="assets/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="assets/js/slider/jQRangeSlider/jQAllRangeSliders-withRuler-min.js"></script>
+
+
+    <script>
+        //--Jquery Select2--
+        $("#e1").select2();
+        $("#e2").select2({
+            placeholder: "Select a State",
+            allowClear: true
+        });
+
+        //--Bootstrap Date Picker--
+        $('.date-picker').datepicker();
+
+        //--Bootstrap Time Picker--
+        $('#timepicker1').timepicker();
+
+        //--Bootstrap Date Range Picker--
+        $('#reservation').daterangepicker();
+
+        //--JQuery Autosize--
+        $('#textareaanimated').autosize({ append: "\n" });
+
+        //--Fuelux Spinner--
+        $('.spinner').spinner();
+
+
+        //--jQuery MiniColors--
+        $('.colorpicker').each(function () {
+            $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                defaultValue: $(this).attr('data-defaultValue') || '',
+                inline: $(this).attr('data-inline') === 'true',
+                letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                opacity: $(this).attr('data-opacity'),
+                position: $(this).attr('data-position') || 'bottom left',
+                change: function (hex, opacity) {
+                    if (!hex) return;
+                    if (opacity) hex += ', ' + opacity;
+                    try {
+                        console.log(hex);
+                    } catch (e) { }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+
+
+        //---Jquery Knob--
+        $(".knob").knob();
+
+
+        //---noUiSlider--
+        $("#sample-minimal").noUiSlider({
+            range: [0, 100],
+            start: [20, 80],
+            connect: true,
+            serialization: {
+                mark: ',',
+                resolution: 0.1,
+                to: [[$("#minimal-label1"), 'html'],
+                [$('#minimal-label2'), 'html']]
+            }
+        });
+
+        $("#sample-onehandle").noUiSlider({
+            range: [20, 100],
+            start: 40,
+            step: 20,
+            handles: 1,
+            connect: "lower",
+            serialization: {
+                to: [$("#low"), 'html']
+            }
+        });
+        $("#sample-onehandle-upper").noUiSlider({
+            range: [20, 100],
+            start: 70,
+            step: 20,
+            handles: 1,
+            connect: "upper",
+            serialization: {
+                to: [$("#low"), 'html']
+            }
+        });
+        $('.slider').noUiSlider({
+            range: [0, 255],
+            start: 127,
+            handles: 1,
+            connect: "lower",
+            orientation: "vertical",
+            serialization: {
+                resolution: 1
+            }
+            , slide: function () {
+
+                var color = 'rgb(' + $("#red").val()
+                    + ',' + $("#green").val()
+                    + ',' + $("#blue").val()
+                    + ')';
+
+                $(".result").css({
+                    background: color
+                    , color: color
+                });
+            }
+        });
+
+        $(".sized-slider").noUiSlider({
+            range: [0, 100],
+            start: 50,
+            handles: 1,
+            connect: "lower",
+            serialization: {
+                to: [$("#low"), 'html']
+            }
+        });
+
+        $(".colored-slider").noUiSlider({
+            range: [0, 100],
+            start: 30,
+            handles: 1,
+            connect: "lower",
+            serialization: {
+                to: [$("#low"), 'html']
+            }
+        });
+
+        //--jQRangeSlider--
+        $(".sized-rangeslider").rangeSlider();
+        $(".colored-rangeslider").rangeSlider();
+        $("#rangeslider").rangeSlider();
+        $("#editrangeslider").editRangeSlider();
+        $("#daterangeslider").dateRangeSlider();
+        $("#noarrowsrangeslider").rangeSlider({ arrows: false });
+        $("#boundsrangeslider").rangeSlider({ bounds: { min: 10, max: 90 } });
+        $("#dvrangeslider").rangeSlider({ defaultValues: { min: 13, max: 66 } });
+        $("#delayrangeslider").rangeSlider({ valueLabels: "change", delayOut: 4000 });
+        $("#durationrangeslider").rangeSlider({ valueLabels: "change", durationIn: 1000, durationOut: 1000 });
+        $("#disabledrangeslider").rangeSlider({ enabled: false });
+        $("#steprangeslider").rangeSlider({ step: 10 });
+        $("#labelsrangeslider").rangeSlider({ valueLabels: "hide" });
+        $("#simlescalesrangeslider").rangeSlider({
+            scales: [
+                // Primary scale
+                {
+                    first: function (val) { return val; },
+                    next: function (val) { return val + 10; },
+                    stop: function (val) { return false; },
+                    label: function (val) { return val; },
+                    format: function (tickContainer, tickStart, tickEnd) {
+                        tickContainer.addClass("myCustomClass");
+                    }
+                },
+                // Secondary scale
+                {
+                    first: function (val) { return val; },
+                    next: function (val) {
+                        if (val % 10 === 9) {
+                            return val + 2;
+                        }
+                        return val + 1;
+                    },
+                    stop: function (val) { return false; },
+                    label: function () { return null; }
+                }]
+        });
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+        $("#dateRulersExample").dateRangeSlider({
+            bounds: { min: new Date(2012, 0, 1), max: new Date(2012, 11, 31, 12, 59, 59) },
+            defaultValues: { min: new Date(2012, 1, 10), max: new Date(2012, 4, 22) },
+            scales: [{
+                first: function (value) { return value; },
+                end: function (value) { return value; },
+                next: function (value) {
+                    var next = new Date(value);
+                    return new Date(next.setMonth(value.getMonth() + 1));
+                },
+                label: function (value) {
+                    return months[value.getMonth()];
+                },
+                format: function (tickContainer, tickStart, tickEnd) {
+                    tickContainer.addClass("myCustomClass");
+                }
+            }]
+        });
+    </script>
+
+    <!--Google Analytics::Demo Only-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52103994-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <!--Google Analytics::Demo Only-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-52103994-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+    <script src="assets/js/delDoc.js"></script>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+    </style>
+    <script src="assets/js/delDoc.js"></script>
+    <script src="assets/js/clickToken.js"></script>
+    <script>
+        var sid = localStorage.getItem("sid")
+        console.log(sid)
+        function setSex(s) {
+            var radio = document.getElementsByName("sex");
+            for (var i = 0; i < radio.length; i++) {
+                if (radio[i].value == s) {
+                    radio[i].checked = true;
+                    break;
+                }
+                radio[i].disabled = true;
+            }
+        }
+
+        $.ajax({
+            url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/xxstudentadd/sid/' + sid,
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                document.getElementById("xingming").value = data.data.students.student_name;
+                document.getElementById("xingming").disabled = true;
+                setSex(data.data.students.student_sex);
+                document.getElementById("IDcard").value = data.data.students.student_cardid;
+                document.getElementById("IDcard").disabled = true;
+                document.getElementById("xuehao").value = data.data.students.student_id;
+                document.getElementById("xuehao").disabled = true;
+                var sel = document.getElementById("xi");
+                for (var i = 0; i < data.data.departmentres.length; i++) {
+                    var opt = new Option(data.data.departmentres[i].department_name, data.data.departmentres[i].id);
+                    sel.options.add(opt);
+                };
+                $.ajax({
+                    url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/DeChildres/id/' + data.data.departmentres[0].id + '/sid/' + sid,
+                    type: 'get',
+                    async: false,
+                    success: function (data) {
+                        console.log(data);
+                        var doc = document.getElementById('fd')
+                        document.getElementById('fd').innerText = ""
+                        for (var s = 0; s < data.data.length; s++) {
+                            var opt = new Option(data.data[s].fd_name, data.data[s].id);
+                            doc.options.add(opt);
+                        }
+                        $.ajax({
+                            url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/FdChildres/id/' + data.data[0].id + '/sid/' + sid,
+                            type: 'get',
+                            async: false,
+                            success: function (data) {
+                                console.log(data);
+                                var doc = document.getElementById("ban")
+                                document.getElementById("ban").innerText = ""
+                                for (var s = 0; s < data.data.length; s++) {
+                                    var opt = new Option(data.data[s].class_name, data.data[s].id);
+                                    doc.options.add(opt);
+                                }
+                                // document.getElementById('e3').value = d_id
+                            },
+                            error: function (error) {
+                                console.log(error)
+                            }
+                        })
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    }
+                })
+
+            },
+            error: function (data) { alert(data.msg) }
+        });
+        function requestFd() {
+            var docId = event.target.value;
+            console.log(docId);
+            $.ajax({
+                url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/DeChildres/id/' + docId + '/sid/' + sid,
+                type: 'get',
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    var doc = document.getElementById("fd")
+                    document.getElementById("fd").innerText = ""
+                    for (var s = 0; s < data.data.length; s++) {
+                        var opt = new Option(data.data[s].fd_name, data.data[s].id);
+                        doc.options.add(opt);
+                    }
+                    $.ajax({
+                        url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/FdChildres/id/' + data.data[0].id + '/sid/' + sid,
+                        type: 'get',
+                        async: false,
+                        success: function (data) {
+                            console.log(data);
+                            var doc = document.getElementById("ban")
+                            document.getElementById("ban").innerText = ""
+                            for (var s = 0; s < data.data.length; s++) {
+                                var opt = new Option(data.data[s].class_name, data.data[s].id);
+                                doc.options.add(opt);
+                            }
+                            // document.getElementById('e3').value = d_id
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    })
+                    // document.getElementById('e3').value = d_id
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+        function requestClass() {
+            var docId = event.target.value;
+            console.log(docId);
+            $.ajax({
+                url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/FdChildres/id/' + docId + '/sid/' + sid,
+                type: 'get',
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    var doc = document.getElementById("ban")
+                    document.getElementById("ban").innerText = ""
+                    for (var s = 0; s < data.data.length; s++) {
+                        var opt = new Option(data.data[s].class_name, data.data[s].id);
+                        doc.options.add(opt);
+                    }
+                    // document.getElementById('e3').value = d_id
+                },
+                error: function (error) {
+                    console.log(error)
+                }
+            })
+        }
+        $("#add").click(function () {
+            var sid = localStorage.getItem("sid")
+            var postdata = {
+                "xxstudent_birthday": document.getElementById("shengri").value,
+                "xxstudent_addres": document.getElementById("zhuzhi").value,
+                "xxstudent_phone": document.getElementById("dianhua").value,
+                "xxstudent_place": document.getElementById("jiguan").value,
+                "xxstudent_job": document.getElementById("zhiwu").value,
+                "xxdepartment_id": document.getElementById("xi").value,
+                "xxstudent_major": document.getElementById("zhuanye").value,
+                "fd_id": document.getElementById("fd").value,
+                "class_id": document.getElementById("ban").value,
+                "xxstudent_fphone": document.getElementById("fuqin").value,
+                "xxstudent_mphone": document.getElementById("muqin").value,
+                "student_id": sid
+            };
+            $.ajax({
+                url: 'http://122.114.6.136/dormitory/public/index.php/api/studentx/xxstudentadd/sid/' + sid,
+                type: 'post',
+                // dataType: 'json',
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(postdata),
+                success: function (data) {
+                    if (data.code == 200) {
+                        alert(data.msg);
+                        document.getElementById("addStudent").reset();
+                    } else {
+                        alert(data.msg);
+                    }
+                },
+                error: function (data) { alert("接口错误") }
+            })
+        })
+    </script>
+</body>
+<!--  /Body -->
+
+</html>
